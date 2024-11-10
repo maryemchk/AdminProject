@@ -1,0 +1,25 @@
+name: Shell Commands with the Checkout Action
+# Workflow name
+
+on:
+  push:
+    branches:
+      - dev  # specify the branch you want to trigger the workflow on
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List Files
+        run: |
+          pwd
+          ls -a
+
+      - name: Checkout Repository
+        uses: actions/checkout@v1
+        # Uses defines a reference to an action
+
+      - name: List Files After Checkout
+        run: |
+          pwd
+          ls -a
